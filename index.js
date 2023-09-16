@@ -12,6 +12,7 @@ import corsOptions from './config/corsOptions.js';
 import connectDB from './config/dbConn.js';
 
 import rootRoutes from './routes/root.js';
+import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import noteRoutes from './routes/notes.js';
 import counterRoutes from './routes/counter.js';
@@ -38,6 +39,7 @@ app.use('/', express.static(path.join(__dirname, 'public'))); // app.use(express
 
 // Routes
 app.use('/', rootRoutes);
+app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/notes', noteRoutes);
 app.use('/counter', counterRoutes);// use for manual reseting or changing counter //should not be there for production 

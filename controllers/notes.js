@@ -30,6 +30,8 @@ export const getAllNotes = asyncHandler(async (req, res) => {
 export const createNewNote = asyncHandler(async (req, res) => {
     const { userId, title, text } = req.body;
 
+    // console.log(req.body)
+
     //confirm data // can create a post without a title
     if (!userId || !text || !title) {
         return res.status(400).json({ message: "All fields are Required" });
@@ -75,7 +77,7 @@ export const updateNote = asyncHandler(async (req, res) => {
     //FORFUTURE : can we change a notes ownership, or the ticket_number
     //TODO: get id from params 
     const { id, text, title, completed } = req.body;
-
+    console.log(req.body)
     //confirm data
     if (!id) {
         return res.status(400).json({ message: "ID is required." });

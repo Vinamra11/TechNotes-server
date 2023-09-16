@@ -50,7 +50,7 @@ export const createNewUser = asyncHandler(async (req, res) => {
 // @access Private
 export const updateUser = asyncHandler(async (req, res) => {
     const { username, password, roles, id, active } = req.body;
-
+    // console.log(req.body)
     //Confirm data// TODO(DONE): change to allow single field change like password
     if (!id) {
         return res.status(400).json({ message: "ID is required." });
